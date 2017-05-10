@@ -43,7 +43,7 @@ $di = new FactoryDefault();
 */ 
  
 $db = function () {
-	$config = include APPLICATION_PATH . "/common/config/main.php";
+	$config = require APPLICATION_PATH . "/common/config/main.php";
 	return new \Phalcon\Db\Adapter\Pdo\Mysql(
 			
 			[
@@ -64,18 +64,21 @@ $di["db"] = $db;
  
 $di->setShared("db",$db);
 
+//(new izi\web\Application(require APPLICATION_PATH . "/common/config/main.php"))->run();
+//view(Izi::$app);
 /*/ Dang ky lang + Domain + SID
 //$router = new Common\Models\Router();
-//$router->bootstrap(); 
+*/
+
 /**  
  * Registering a router 
  */
 $di["router"] = function () { 
 	$router = new Router();
-	 
+	$uri = (new \izi\web\Bootstrap())->bootstrap(); 
 	//$slugs = (new Common\Models\Slug());  
 	//
-	$uri = parseUri(); 
+	//$uri = parseUri(); 
 	//view($uri);
 	//
 	$module = $uri['module'];
@@ -88,7 +91,7 @@ $di["router"] = function () {
 	 	
 	//$slug = $slugs->getSlug($uri['controller_text']);
 		 	
-	$realController = !empty($slug) ? $slug['route'] : $uri['controller'];
+	$realController = $uri['realController'];
 	
  
 	$router->add( 

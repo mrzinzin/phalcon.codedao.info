@@ -73,3 +73,4 @@ $d = [
 foreach($d as $k=>$v){
 	defined($k) or define($k,$v);
 }
+ 

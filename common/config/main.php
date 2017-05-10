@@ -4,6 +4,8 @@ use Phalcon\Config;
 
 return new Config(
     [
+    		'id'=>'phalcon-frontend',
+    		'basePath'=>'/',
         "database" => [
             "adapter"  => "Mysql",
             "host"     => "localhost",

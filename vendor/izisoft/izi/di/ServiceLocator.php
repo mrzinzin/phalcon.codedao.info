@@ -1,16 +1,16 @@
 <?php
 /**
- * @link http://www.yiiframework.com/
- * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
+ * @link http://www.iziframework.com/
+ * @copyright Copyright (c) 2008 izi Software LLC
+ * @license http://www.iziframework.com/license/
  */
 
-namespace yii\di;
+namespace izi\di;
 
-use Yii;
+use Izi;
 use Closure;
-use yii\base\Component;
-use yii\base\InvalidConfigException;
+use izi\base\Component;
+use izi\base\InvalidConfigException;
 
 /**
  * ServiceLocator implements a [service locator](http://en.wikipedia.org/wiki/Service_locator_pattern).
@@ -23,14 +23,14 @@ use yii\base\InvalidConfigException;
  * For example,
  *
  * ```php
- * $locator = new \yii\di\ServiceLocator;
+ * $locator = new \izi\di\ServiceLocator;
  * $locator->setComponents([
  *     'db' => [
- *         'class' => 'yii\db\Connection',
+ *         'class' => 'izi\db\Connection',
  *         'dsn' => 'sqlite:path/to/file.db',
  *     ],
  *     'cache' => [
- *         'class' => 'yii\caching\DbCache',
+ *         'class' => 'izi\caching\DbCache',
  *         'db' => 'db',
  *     ],
  * ]);
@@ -39,7 +39,7 @@ use yii\base\InvalidConfigException;
  * $cache = $locator->get('cache');  // or $locator->cache
  * ```
  *
- * Because [[\yii\base\Module]] extends from ServiceLocator, modules and the application are all service locators.
+ * Because [[\izi\base\Module]] extends from ServiceLocator, modules and the application are all service locators.
  *
  * For more details and usage information on ServiceLocator, see the [guide article on service locators](guide:concept-service-locator).
  *
@@ -132,7 +132,7 @@ class ServiceLocator extends Component
             if (is_object($definition) && !$definition instanceof Closure) {
                 return $this->_components[$id] = $definition;
             } else {
-                return $this->_components[$id] = Yii::createObject($definition);
+                return $this->_components[$id] = Izi::createObject($definition);
             }
         } elseif ($throwException) {
             throw new InvalidConfigException("Unknown component ID: $id");
@@ -148,11 +148,11 @@ class ServiceLocator extends Component
      *
      * ```php
      * // a class name
-     * $locator->set('cache', 'yii\caching\FileCache');
+     * $locator->set('cache', 'izi\caching\FileCache');
      *
      * // a configuration array
      * $locator->set('db', [
-     *     'class' => 'yii\db\Connection',
+     *     'class' => 'izi\db\Connection',
      *     'dsn' => 'mysql:host=127.0.0.1;dbname=demo',
      *     'username' => 'root',
      *     'password' => '',
@@ -165,7 +165,7 @@ class ServiceLocator extends Component
      * });
      *
      * // an instance
-     * $locator->set('cache', new \yii\caching\FileCache);
+     * $locator->set('cache', new \izi\caching\FileCache);
      * ```
      *
      * If a component definition with the same ID already exists, it will be overwritten.
@@ -242,11 +242,11 @@ class ServiceLocator extends Component
      * ```php
      * [
      *     'db' => [
-     *         'class' => 'yii\db\Connection',
+     *         'class' => 'izi\db\Connection',
      *         'dsn' => 'sqlite:path/to/file.db',
      *     ],
      *     'cache' => [
-     *         'class' => 'yii\caching\DbCache',
+     *         'class' => 'izi\caching\DbCache',
      *         'db' => 'db',
      *     ],
      * ]
