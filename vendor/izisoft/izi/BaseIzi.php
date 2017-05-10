@@ -1,7 +1,11 @@
 <?php
  
 namespace izi;
- 
+use izi\base\InvalidConfigException;
+use izi\base\InvalidParamException;
+use izi\base\UnknownClassException;
+use izi\log\Logger;
+use izi\di\Container; 
 
 /**
  * Gets the application start timestamp.

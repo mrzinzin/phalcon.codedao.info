@@ -1,6 +1,6 @@
 <?php
 namespace frontend\controllers	; 
-
+use Izi;
 use Phalcon\Mvc\View;
 
 class IndexController extends ControllerBase
@@ -18,8 +18,8 @@ class IndexController extends ControllerBase
 		foreach ($class_methods as $method_name) {
 			// echo "$method_name\n<br>";
 		} 
-		
-		
+		//Izi::setAlias('@web',APPLICATION_PATH);
+		view(Izi::getAlias('@web'),true);
 		//view((new \izi\web\Slugs)->getId(),true); 
 		
     	//$this->view->pick(__VIEW_PATH__ . '/' . $this->dispatcher->getActionName());    	

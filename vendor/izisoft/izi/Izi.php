@@ -9,7 +9,7 @@ class Izi extends izi\BaseIzi{
 	//}
 	 
 	
-	public static function getAlias($param){
+	public static function getAlias1($param){
 		$params = explode('/', $param);
 		$alias = $params[0]; unset($params[0]);
 		$path = $alias;
