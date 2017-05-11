@@ -43,7 +43,7 @@ class Bootstrap extends Model
 		$url = str_replace($suffix,	'',$uri['controller_text']) ;
 		$check_database = false;
 		
-		
+		$uri['realController'] = $uri['controller'];
 		if(strlen($url)>0 && !__IS_SUSPENDED__){
 			if(__IS_ADMIN__){
 				//$r = (new \yii\db\Query())->select(['id','route','child_code','lft','rgt','bizrule','title','url','is_permission'])
@@ -94,9 +94,9 @@ class Bootstrap extends Model
 		 * Get Shop ID
 		 */
 		 
-		$query = new Builder();
-		$query->from(['a'=>'izi\web\DomainPointer'])->getQuery()->execute()
-		;
+		//$query = new Builder();
+		//$query->from(['a'=>'izi\web\DomainPointer'])->getQuery()->execute()
+		//;
 		$r = $this->modelsManager->createBuilder()
 		
 		->from(['a'=> "izi\web\DomainPointer"])
