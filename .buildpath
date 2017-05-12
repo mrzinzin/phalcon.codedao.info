@@ -3,4 +3,5 @@
 	<buildpathentry external="true" kind="lib" path="D:/web/server/www/phalcon-devtools/ide"/>
 	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
 	<buildpathentry kind="src" path=""/>
+	<buildpathentry external="true" kind="lib" path="D:/xampp/htdocs/advanced/vendor/yiisoft/yii2"/>
 </buildpath>
