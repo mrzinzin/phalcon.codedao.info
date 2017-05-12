@@ -1,1 +1,0 @@
-<div class="layout2"><?= $this->getContent() ?></div><!--end layout2 -->

@@ -1,1 +1,0 @@
-<div class="layout2">{{ content() }}</div><!--end layout2 -->
