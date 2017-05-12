@@ -11,13 +11,11 @@ try {
 	require APPLICATION_PATH. "/common/functions/functions.php";
 	require APPLICATION_PATH. "/vendor/izisoft/izi/Izi.php";	
 	//
-	require APPLICATION_PATH. "/common/config/services.php";
-	 
+	require APPLICATION_PATH. "/common/config/services.php";	 
     /**
      * Handle the request
      */
     $application = new Application();
-
     /**
      * Assign the DI
      */
@@ -29,7 +27,4 @@ try {
     require APPLICATION_PATH. "/common/config/modules.php"; 
     echo $application->handle()->getContent(); 
     
-} catch (Exception $e) {
-    echo $e->getMessage();
-    
-}
+}catch (Exception $e) {echo $e->getMessage();}
