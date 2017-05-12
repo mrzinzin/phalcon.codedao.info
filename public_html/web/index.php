@@ -10,7 +10,9 @@ try {
 	require APPLICATION_PATH. "/common/config/bootstrap.php";
 	require APPLICATION_PATH. "/common/functions/functions.php";
 	require APPLICATION_PATH. "/vendor/izisoft/izi/Izi.php";	
-	//
+	/*
+	 * 
+	 */
 	require APPLICATION_PATH. "/common/config/services.php";	 
     /**
      * Handle the request
